@@ -1,0 +1,643 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  background-color: #000 !important;
+  /* overflow-x: hidden; */
+}
+
+.main-header {
+  background-color: #000; /* Adjust as needed */
+  color: #fff; /* Adjust text color */
+  padding: 20px 0; /* Adjust vertical padding */
+}
+
+.container {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Adjust horizontal padding */
+}
+.textWrap {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Adjust horizontal padding */
+}
+.bigText {
+  font-size: 11rem; /* Adjust font size */
+  margin-bottom: 15px;
+}
+
+.logo img {
+  height: 50px; /* Adjust logo height */
+}
+
+.main-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.main-navigation ul li {
+  margin-left: 20px; /* Adjust spacing between menu items */
+}
+
+.main-navigation ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem; /* Adjust font size */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  cursor: pointer;
+  margin-left: 20px; /* Adjust spacing for the search icon */
+}
+
+.search-icon svg {
+  width: 20px; /* Adjust search icon size */
+  height: 20px;
+}
+
+/* Dynamic Content Styles */
+.header-dynamic-content {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Adjust the height of the dynamic section */
+}
+
+.dynamic-image,
+.dynamic-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Adjust background color for the dynamic section */
+}
+
+.dynamic-image.active,
+.dynamic-text.active {
+  opacity: 1;
+}
+
+.dynamic-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dynamic-text {
+  color: #fff;
+  padding: 20px;
+}
+
+.dynamic-text .title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.dynamic-text .description {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  text-wrap: wrap; /* Ensure text wraps within the container */
+  max-width: 70%; /* Adjust max width for better readability */
+}
+
+.dynamic-text .button {
+  display: inline-block;
+  background-color: #d2d4d4; /* Example button color */
+  color: #1d1c1c;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  padding: 0; /* Adjust padding as needed */
+  background-color: #f9f9f9; /* Example background color */
+}
+
+.hero-section .container {
+  display: flex;
+  flex-direction: row; /* Adjust based on layout - could be column */
+  justify-content: space-between; /* Adjust based on layout */
+  align-items: center; /* Adjust based on layout */
+}
+
+.hero-content {
+  flex: 1 1 30%; /* Allow content to take up roughly 30% of the space */
+  padding-right: 10px; /* Adjust spacing */
+  min-width: 200px; /* Prevent content from becoming too narrow */
+}
+
+.hero-title {
+  font-size: 2.5rem; /* Adjust font size */
+  margin-bottom: 15px;
+  color: #333; /* Adjust color */
+}
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666; /* Adjust color */
+}
+
+.hero-media {
+  flex: 1 1 40%; /* Allow media to take up roughly 65% of the space */
+  min-width: 300px; /* Prevent video from becoming too narrow */
+  position: relative;
+  padding-bottom: 36.5625%; /* Aspect ratio for 65% of 16:9 ( (9/16) * 65% width of its own, or more simply 9/16 of its own width. 56.25% of its own width for 16:9) -> 56.25% of its own width for 16:9 video */
+  /* For a 16:9 video, padding-bottom should be 56.25% (9 / 16 * 100) */
+  /* Let's correct this to be 56.25% of its own width for a 16:9 video */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+/* Champions Section Styles */
+.champions-section {
+  padding: 0; /* Adjust padding as needed */
+  background-color: #fff; /* Example background color */
+}
+
+.champions-section .container {
+  display: flex;
+  flex-direction: row-reverse; /* Adjust based on layout */
+  justify-content: space-between; /* Adjust based on layout */
+  align-items: center; /* Adjust based on layout */
+}
+
+.champions-content {
+  flex: 1 1 30%; /* Allow content to take up roughly 30% of the space */
+  padding-left: 20px; /* Adjust spacing */
+  min-width: 280px; /* Prevent content from becoming too narrow */
+}
+
+.champions-title {
+  font-size: 2.5rem; /* Adjust font size */
+  margin-bottom: 15px;
+  color: #333; /* Adjust color */
+}
+
+.champions-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666; /* Adjust color */
+}
+
+.champions-media {
+  flex: 1; /* Take up available space */
+}
+
+.champions-media img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Styling for the iframe within hero-media to make it fill the container */
+.hero-media iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0; /* Remove default iframe border */
+}
+
+/* Featured Classes Section Styles */
+.featured-classes-section {
+  padding: 40px 0; /* Adjust padding as needed */
+  background-color: #f2f2f2; /* Example background color */
+  text-align: center;
+}
+
+.featured-classes-section .section-title {
+  font-size: 2rem; /* Adjust font size */
+  margin-bottom: 30px;
+  color: #333; /* Adjust color */
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Spacing between grid items */
+  padding: 0 20px; /* Adjust horizontal padding */
+}
+
+.class-item {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.class-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.class-item h3 {
+  font-size: 1.2rem;
+  padding: 15px;
+  margin: 0;
+  color: #333;
+  text-align: center;
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Spacing between grid items */
+  padding: 0 20px; /* Adjust horizontal padding */
+}
+
+/* ... previous CSS ... */
+
+/* Tam Khan Section Styles */
+.tam-khan-section {
+  padding: 40px 0; /* Adjust padding as needed */
+  background-color: #f9f9f9; /* Example background color */
+  align-items: center;
+}
+
+.tam-khan-section .container {
+  display: flex;
+  flex-direction: row; /* Adjust based on layout */
+  justify-content: space-between; /* Adjust based on layout */
+  align-items: center; /* Adjust based on layout */
+  padding: 0 20px;
+}
+
+.tam-khan-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.tam-khan-content h2 {
+  font-size: 2.5rem; /* Adjust font size */
+  margin-bottom: 10px;
+  color: #333; /* Adjust color */
+}
+
+.tam-khan-content .subtitle {
+  font-size: 1rem;
+  color: #666; /* Adjust color */
+  margin-bottom: 20px;
+}
+
+.tam-khan-content p {
+  margin-bottom: 10px;
+  color: #555; /* Adjust color */
+}
+
+.tam-khan-image {
+  flex: 1;
+}
+
+.tam-khan-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+/* Join Us Section Styles */
+.join-us-section {
+  padding: 60px 0; /* Adjust padding as needed */
+  background-color: #222; /* Example background color */
+  color: #fff;
+  text-align: center;
+}
+
+.join-us-section1 {
+    background-image: url('../assest/DSC06782-scaled.jpg'); /* Edit this path */
+    background-size: cover; /* Ensures the image covers the section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 60px 20px; /* Adjust padding as needed for content spacing */
+    /* color: white; */ /* Uncomment if your text isn't already white and needs to be */
+    position: relative; /* Needed if you plan to add an overlay */
+    z-index: 0; /* Base z-index */
+}
+
+/* Add this to css/style.css if you want an overlay */
+.join-us-section1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.301); /* 50% black overlay, adjust as needed */
+    z-index: 1; /* Places the overlay above the background image */
+}
+
+.join-us-section1 .container {
+    position: relative; /* Ensure content is on top of the overlay */
+    z-index: 2; /* Higher z-index than the overlay */
+}
+
+.join-us-section .container {
+  display: flex; /* Ensures it's a flex container if not already, or overrides other display types */
+  flex-direction: column; /* This is the key: stacks flex items vertically */
+  align-items: center; /* Optional: centers the content and form horizontally within the container */
+}
+
+/* You might also want to ensure the content and form take up a reasonable width */
+.join-us-section .join-us-content,
+.join-us-section .access-pass-form {
+  width: 100%; /* Makes them take the full width of the container */
+  max-width: 600px; /* Optional: constrain the max width for better readability on wider screens */
+  margin-bottom: 20px; /* Adds some space between the content and the form */
+}
+
+.join-us-section .access-pass-form {
+  margin-bottom: 0; /* Remove bottom margin from the last element if not needed */
+}
+
+.join-us-content h2 {
+  font-size: 3rem; /* Adjust font size */
+  margin-bottom: 15px;
+}
+
+.join-us-content .sub-heading {
+  font-size: 1.5rem; /* Adjust font size */
+  margin-bottom: 20px;
+  color: #ccc; /* Adjust color */
+}
+
+.join-us-content .disclaimer {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #ecebeb; /* Adjust color */
+}
+
+.access-pass-form {
+  max-width: 300px !important; /* Adjust form width */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spacing between form elements */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.access-pass-form input[type="text"],
+.access-pass-form input[type="email"],
+.access-pass-form input[type="tel"],
+.access-pass-form input[type="date"],
+.access-pass-form input[type="time"],
+.access-pass-form select {
+  padding: 12px;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.access-pass-form button[type="submit"] {
+  background-color: #dadada; /* Example button color */
+  color: #1d1d1d;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.access-pass-form button[type="submit"]:hover {
+  background-color: #cacccc; /* Darker hover color */
+}
+
+/* ... previous CSS ... */
+
+/* Footer Styles */
+footer {
+  background-image: url(../assest/DSC06825-scaled.jpg);
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat;/* Prevents the image from tiling */
+  color: #fff;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.contact-info,
+.contact-details,
+.location-map {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin-bottom: 5px;
+}
+
+.contact-details p {
+  margin-bottom: 5px;
+}
+
+.contact-details a {
+  color: #dadddd;
+  text-decoration: none;
+}
+
+.location-map iframe {
+  width: 100%;
+  max-width: 400px; /* Adjust map width */
+  height: auto;
+  border: 0;
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.footer-bottom {
+  background-color: #222;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.footer-bottom .container {
+  padding: 0 20px;
+}
+
+/* Responsive adjustments for footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info,
+  .contact-details,
+  .location-map {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .location-map iframe {
+    max-width: 100%;
+  }
+}
+/* Add this to your css/style.css file */
+.featured-classes-section .classes-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Creates 5 equal-width columns */
+  gap: 20px; /* Adjust the gap between items as needed */
+}
+
+/* Optional: Ensure images within class items behave well */
+.featured-classes-section .class-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.search-input {
+  display: none; /* Hidden by default */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 10px; /* Spacing from the icon */
+}
+
+.search-input.active {
+  display: inline-block; /* Show when active */
+}
+
+/* Styles for fade-in from left animation (CSS-only) */
+@keyframes slideFadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(
+      -100px
+    ); /* Start position: off-screen left and transparent */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(
+      0
+    ); /* End position: original spot and fully visible */
+  }
+}
+
+@keyframes slideFadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(
+      100px
+    ); /* Start position: off-screen right and transparent */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(
+      0
+    ); /* End position: original spot and fully visible */
+  }
+}
+
+@keyframes slideFadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(
+      -150px
+    ); /* Start position: 150px above and transparent */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(
+      0
+    ); /* End position: original spot and fully visible */
+  }
+}
+
+@keyframes slideFadeInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(
+      150px
+    ); /* Start position: 150px above and transparent */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(
+      0
+    ); /* End position: original spot and fully visible */
+  }
+}
+
+.fade-in-from-left {
+  /* Set initial state, also acts as fallback if animations are off */
+  opacity: 0;
+  transform: translateX(-100px);
+  will-change: opacity, transform; /* Optimization hint for the browser */
+  animation: slideFadeInFromLeft 0.7s ease-out forwards; /* Ensures the element stays in its 'to' state after animation */
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
+
+.fade-in-from-right {
+  /* Set initial state, also acts as fallback if animations are off */
+  opacity: 0;
+  transform: translatex(100px);
+  will-change: opacity, transform; /* Optimization hint for the browser */
+  animation: slideFadeInFromRight 0.7s ease-out forwards; /* Ensures the element stays in its 'to' state after animation */
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
+
+.slide-in-from-top {
+  opacity: 0; /* Initial state before animation */
+  transform: translateY(-150px); /* Initial position above its final spot */
+  will-change: opacity, transform; /* Optimization hint */
+  animation: slideFadeInFromTop 0.8s ease-out forwards; /* Apply animation */
+  animation-delay: 0.2s; /* Optional: slight delay before animation starts */
+}
+
+.slide-in-from-bottom {
+  opacity: 0; /* Initial state before animation */
+  transform: translateY(-150px); /* Initial position above its final spot */
+  will-change: opacity, transform; /* Optimization hint */
+  animation: slideFadeInFromBottom 0.8s ease-in-out forwards; /* Apply animation */
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}

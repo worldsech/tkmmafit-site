@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GALLERY - tkmmafit</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      section {
+        margin: 0;
+        padding: 0;
+      }
+
+      .main-navigation ul li.has-dropdown {
+        position: relative;
+      }
+
+      .main-navigation ul li.has-dropdown > a {
+        padding-right: 25px; /* Space for the arrow */
+      }
+
+      .main-navigation ul li.has-dropdown > a::after {
+        content: "\25BE"; /* Down arrow */
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.8em;
+      }
+
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #333; /* Dark background for dropdown */
+        padding: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+      }
+
+      .dropdown a {
+        display: block;
+        color: white;
+        padding: 8px 20px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .dropdown a:hover {
+        background-color: #555;
+      }
+
+      .main-navigation ul li.has-dropdown:hover .dropdown {
+        display: block;
+      }
+
+      .pinterest-gallery {
+        /* Adjust column count for different screen sizes */
+        column-count: 4; /* Default for larger screens */
+        column-gap: 1em; /* Space between columns */
+        padding: 1em; /* Padding around the gallery */
+        background-color: #f0f0f0; /* Optional: light background for the gallery area */
+      }
+
+      .pinterest-gallery .gallery-image-container {
+        display: block; /* Or inline-block if it fits better with columns */
+        overflow: hidden; /* Crucial for containing the zoom effect */
+        margin-bottom: 1em; /* Space below each image container */
+        border-radius: 8px; /* Optional: rounded corners for containers */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        break-inside: avoid-column; /* Prevent containers from breaking across columns */
+      }
+
+      .pinterest-gallery img {
+        width: 100%; /* Make images fill the column width */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Remove extra space below images */
+        transition: transform 0.3s ease-in-out; /* Smooth transition for the zoom */
+      }
+
+      .pinterest-gallery .gallery-image-container:hover img {
+        transform: scale(1.1); /* Zoom level - adjust as needed */
+      }
+
+      /* Responsive adjustments for column count */
+      @media (max-width: 1200px) {
+        .pinterest-gallery {
+          column-count: 3;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .pinterest-gallery {
+          column-count: 2;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .pinterest-gallery {
+          column-count: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./assest/logotk-150x150.png" alt="TKMMAFIT Logo" />
+          </a>
+        </div>
+        <nav class="main-navigation">
+          <ul>
+            <li><a href="/index.html">TKMMAFIT</a></li>
+            <li><a href="./tk27.html">TK 27</a></li>
+            <li class="has-dropdown">
+              <a href="/classes.html">CLASSES</a>
+              <div class="dropdown">
+                <a href="./mma.html">MMA</a>
+                <a href="./boxing.html">BOXING</a>
+                <a href="./muay.html">MUAY THAI</a>
+                <a href="./personal-training.html">PERSONAL TRAINING</a>
+                <a href="./freestyle-training.html">FREESTYLE TRAINING</a>
+                <a href="./brazilian-jiu.html">BRAZILIAN JIU JITSU</a>
+                <a href="./pro-class.html">PRO CLASS</a>
+                <a href="./kids-jiu.html">KIDS JIU JITSU</a>
+                <a href="./kids-mma.html">KIDS MMA</a>
+                <a href="./kids-muay.html">KIDS MUAY THAI</a>
+              </div>
+            </li>
+            <li><a href="./membership.html">MEMBERSHIP</a></li>
+            <li><a href="./tamkhan.html">TAM KHAN</a></li>
+            <li><a href="/gallery.html">GALLERY</a></li>
+            <li><a href="./contactus.html">CONTACT US</a></li>
+            <li><a href="./about.html">ABOUT US</a></li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              ></path>
+            </svg>
+          </div>
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search..."
+          />
+        </div>
+      </div>
+
+      <div
+        class="header-content slide-in-from-top"
+        style="position: relative; display: inline-block"
+      >
+        <img
+          src="./assest/32/DSC05150-scaled.jpg"
+          alt="Header Image 1"
+          style="display: block; width: 100%; height: 10%"
+        />
+        <h1
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-size: 8em;
+            margin: 0;
+          "
+        >
+          TAM KHAN
+        </h1>
+      </div>
+    </header>
+
+    <main class="pinterest-gallery">
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/Screenshot-2024-09-05-at-11.45.20 AM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/Screenshot-2024-09-05-at-11.44.07 AM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/Screenshot-2024-09-05-at-2.03.09 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/Screenshot-2024-09-05-at-1.54.15 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/Screenshot-2024-09-05-at-1.45.56 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/Screenshot-2024-09-05-at-1.43.21 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/6.jpg" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img
+          src="./assest/32/WhatsApp-Image-2024-10-31-a-21.02.57_0b301c0c-scaled.jpg"
+          alt=""
+        />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img
+          src="./assest/32/WhatsApp-Image-2024-10-31-a-14.08.17_4e05e738-scaled.jpg"
+          alt=""
+        />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/32/Screenshot-2024-10-01-at-8.15.05 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/32/Screenshot-2024-10-01-at-8.13.11 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/32/Screenshot-2024-10-01-at-8.12.48 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/32/Screenshot-2024-10-01-at-8.12.36 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/32/Screenshot-2024-10-01-at-8.12.03 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/32/Screenshot-2024-10-01-at-8.11.44 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/32/Screenshot-2024-10-01-at-8.11.31 PM.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/32/pixelcut-export-3.jpg" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/32/1.png" alt="" />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img
+          src="./assest/11/WhatsApp-Image-2024-10-31-a-21.02.47_fa380bc2-scaled.jpg"
+          alt=""
+        />
+      </div>
+      <div class="gallery-image-container slide-in-from-bottom">
+        <img src="./assest/11/DSC05434-scaled.jpg" alt="" />
+      </div>
+    </main>
+
+    <footer class="slide-in-from-bottom">
+      <img src="./assest/logotk.png" alt="TKMMAFIT Logo" class="footer-logo" />
+      <div class="container footer-content">
+        <div class="contact-info">
+          <h3>TKMMAFIT</h3>
+          <p>SNATHA TOWER - 9TH FLOOR</p>
+          <div></div>
+          <p>DUBAI MEDIA CITY</p>
+          <p>DUBAI, UNITED ARAB EMIRATES</p>
+        </div>
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.278369718399!2d55.18544778503418!3d25.09348848393379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bfe7f0e357d%3A0xbaa91f1c13a8b312!2sTKMMAFIT!5e0!3m2!1sen!2sae!4v1708238747987!5m2!1sen!2sae"
+            width="600px"
+            height="450px"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="contact-details">
+          <p>
+            PHONE: <br />
+            <a href="tel:+971588403718">+971 58 840 3718</a>
+          </p>
+          <p>
+            EMAIL: <br /><a href="mailto:INFO@TKMMAFIT.COM"
+              >INFO@TKMMAFIT.COM</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TKMMAFIT - Header</title>
+    <link rel="stylesheet" href="css/style.css" />
+<link rel="shortcut icon" href="./assest/11/cropped-cropped-tk-mma-logo-black-1024x266-1.png" type="image/x-icon">
+    <style>
+      body {
+        background-color: #000 important;
+      }
+      section {
+        margin: 0;
+        padding: 0;
+      }
+      .image-style {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .image-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 7em;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+
+      .image-background {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .mma-section {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        background-color: #000;
+        padding: 0;
+        margin: 0;
+      }
+      .contain {
+        /* width: 100%; */
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: start;
+        color: white;
+      }
+      .contain h2 {
+        font-size: 3em;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+      .contain h4 {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+      .contain h2,
+      .contain h4 {
+        color: white;
+        text-transform: capitalize;
+      }
+      .contain p {
+        font-size: 1.2em;
+        margin: 0;
+        padding: 0;
+        color: white;
+        background-color: black;
+        opacity: 0.7;
+        padding: 5px;
+      }
+      .reverse {
+        flex-direction: row-reverse important;
+      }
+      .first-image-background {
+        background-color: aliceblue;
+        background-image: url("/assest/11/IMG_7462-scaled.jpg");
+        background-size: cover;
+        height: 70vh;
+        padding: 50px;
+      }
+      .second-image-background {
+        background-color: aliceblue;
+        background-image: url("/assest/11/IMG_7456-scaled.jpg");
+        background-size: cover;
+        height: 70vh;
+        padding: 50px;
+      }
+      .third-image-background {
+        background-color: aliceblue;
+        background-image: url("/assest/11/IMG_7458-scaled.jpg");
+        background-size: cover;
+        height: 70vh;
+        padding: 50px;
+      }
+
+      /* Basic CSS for the dropdown */
+      .main-navigation ul li.has-dropdown {
+        position: relative;
+      }
+
+      .main-navigation ul li.has-dropdown > a {
+        padding-right: 25px; /* Space for the arrow */
+      }
+
+      .main-navigation ul li.has-dropdown > a::after {
+        content: "\25BE"; /* Down arrow */
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.8em;
+      }
+
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #333; /* Dark background for dropdown */
+        padding: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+      }
+
+      .dropdown a {
+        display: block;
+        color: white;
+        padding: 8px 20px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .dropdown a:hover {
+        background-color: #555;
+      }
+
+      .main-navigation ul li.has-dropdown:hover .dropdown {
+        display: block;
+      }
+
+      .hero-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./assest/logotk-150x150.png" alt="TKMMAFIT Logo" />
+          </a>
+        </div>
+        <nav class="main-navigation">
+          <ul>
+            <li><a href="/index.html">TKMMAFIT</a></li>
+            <li><a href="./tk27.html">TK 27</a></li>
+            <li class="has-dropdown">
+              <a href="/classes.html">CLASSES</a>
+              <div class="dropdown">
+                <a href="./mma.html">MMA</a>
+                <a href="./boxing.html">BOXING</a>
+                <a href="./muay.html">MUAY THAI</a>
+                <a href="./personal-training.html">PERSONAL TRAINING</a>
+                <a href="./freestyle-training.html">FREESTYLE TRAINING</a>
+                <a href="./brazilian-jiu.html">BRAZILIAN JIU JITSU</a>
+                <a href="./pro-class.html">PRO CLASS</a>
+                <a href="./kids-jiu.html">KIDS JIU JITSU</a>
+                <a href="./kids-mma.html">KIDS MMA</a>
+                <a href="./kids-muay.html">KIDS MUAY THAI</a>
+              </div>
+            </li>
+            <li><a href="./membership.html">MEMBERSHIP</a></li>
+            <li><a href="./tamkhan.html">TAM KHAN</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="./contactus.html">CONTACT US</a></li>
+            <li><a href="./about.html">ABOUT US</a></li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              ></path>
+            </svg>
+          </div>
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search..."
+          />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="image-background slide-in-from-top">
+        <image
+          src="./assest/11/IMG_7455-scaled.jpg"
+          alt="MMA"
+          class="image-style"
+        />
+        <h2 class="image-text">PRO CLASS</h2>
+      </section>
+
+      <section class="image-background">
+        <image
+          src="./assest/11/IMG_7461.jpg"
+          alt="DSC06797-scaled"
+          class="image-style"
+        />
+      </section>
+
+      <section class="mma-section">
+        <div class="container contain">
+          <div class="first-image-background fade-in-from-left">
+            <h1 class="">Train Like the Pros</h1>
+            <h4 class="">Train Like the Pros</h4>
+            <p class="">
+              Our Advanced Pro Class at TKMMAFIT is designed for experienced
+              martial artists ready to train alongside UFC, PFL, and
+              Bellator-level athletes. Led by elite coaches, this high-intensity
+              class focuses on advanced techniques, sparring, and fight
+              strategy, pushing participants to peak performance. Perfect for
+              seasoned fighters aiming to compete or elevate their skill set,
+              the program combines strength, agility, and technical mastery.
+              Join TKMMAFIT’s Advanced Pro Class and challenge yourself at the
+              level of top-tier professional fighters!
+            </p>
+          </div>
+          <iframe
+            title="vimeo-player"
+            src="https://player.vimeo.com/video/1025368538?h=f5d078aa14&autoplay=1&loop=1&muted=1&background=1"
+            width="768"
+            height="560"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="container contain reverse">
+          <iframe
+            title="vimeo-player"
+            src="https://player.vimeo.com/video/1025369188?h=f48eb0b2de&loop=1&muted=1&background=1"
+            width="768"
+            height="560"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="second-image-background fade-in-from-right">
+            <h4 class="">Among Elite Fighters</h4>
+            <h2 class="">Challenge Yourself</h2>
+            <p class="">
+              TKMMAFIT’s Advanced Pro Class is the ultimate training ground for
+              experienced martial artists looking to push their limits. Led by
+              top-level coaches, this class provides an intense focus on
+              advanced fight strategy, sparring, and technical refinement. Ideal
+              for fighters preparing for competition or seeking the intensity of
+              professional-level training, this program is designed to bring out
+              the best in every athlete. Come experience the rigor and mastery
+              that drive world-class fighters!
+            </p>
+          </div>
+        </div>
+
+        <div class="container contain">
+          <div class="third-image-background fade-in-from-left">
+            <h2 class="">Reach Your Peak</h2>
+            <h4 class="">with High-Intensity Training</h4>
+            <p class="">
+              Our Advanced Pro Class offers a unique opportunity to train at a
+              professional standard, preparing you for the rigors of high-level
+              competition. With a curriculum that combines conditioning,
+              sparring, and strategy, TKMMAFIT’s program caters to seasoned
+              fighters looking to advance their skills. Whether aiming to
+              compete or achieve personal milestones, you’ll benefit from
+              training that emphasizes strength, agility, and tactical expertise
+              in an environment that challenges and inspires.
+            </p>
+          </div>
+          <iframe
+            title="vimeo-player"
+            src="https://player.vimeo.com/video/1025368413?h=328347a8ef&autoplay=1&loop=1&muted=1&background=1"
+            width="768"
+            height="560"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="join-us-section1 join-us-section">
+        <div class="container slide-in-from-bottom">
+          <div class="join-us-content">
+            <h2>JOIN US</h2>
+            <p class="sub-heading">GET A FREE 1 DAY FULL ACCESS PASS</p>
+            <p class="disclaimer">
+              TO ENSURE YOUR BOOKING CAN BE CONFIRMED, PLEASE BOOK YOUR GYM
+              SESSION OR SCHEDULED CLASS AT LEAST 24 HOURS IN ADVANCE. A
+              REPRESENTATIVE WILL CONTACT YOU TO CONFIRM YOUR BOOKING.
+            </p>
+          </div>
+          <form class="access-pass-form">
+            <input type="text" name="name" placeholder="NAME" />
+            <input type="email" name="email" placeholder="EMAIL" />
+            <input type="tel" name="phone" placeholder="05X-XXX-XXXX" />
+            <select name="classes">
+              <option value="" disabled selected>CLASSES</option>
+              <option value="boxing">BOXING</option>
+              <option value="mma">MMA</option>
+              <option value="personal-training">PERSONAL TRAINING</option>
+            </select>
+            <input type="date" name="date" />
+            <input type="time" name="time" />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="slide-in-from-bottom">
+      <img src="./assest/logotk.png" alt="TKMMAFIT Logo" class="footer-logo" />
+      <div class="container footer-content">
+        <div class="contact-info">
+          <h3>TKMMAFIT</h3>
+          <p>SNATHA TOWER - 9TH FLOOR</p>
+          <div></div>
+          <p>DUBAI MEDIA CITY</p>
+          <p>DUBAI, UNITED ARAB EMIRATES</p>
+        </div>
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.278369718399!2d55.18544778503418!3d25.09348848393379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bfe7f0e357d%3A0xbaa91f1c13a8b312!2sTKMMAFIT!5e0!3m2!1sen!2sae!4v1708238747987!5m2!1sen!2sae"
+            width="600px"
+            height="450px"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="contact-details">
+          <p>
+            PHONE: <br />
+            <a href="tel:+971588403718">+971 58 840 3718</a>
+          </p>
+          <p>
+            EMAIL: <br /><a href="mailto:INFO@TKMMAFIT.COM"
+              >INFO@TKMMAFIT.COM</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="./js/searchbar.js"></script>
+  </body>
+</html>
