@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TKMMAFIT - tkmmafit</title>
     <link rel="stylesheet" href="css/style.css" />
-<link rel="shortcut icon" href="./assest/11/cropped-cropped-tk-mma-logo-black-1024x266-1.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./assest/11/cropped-cropped-tk-mma-logo-black-1024x266-1.png"
+      type="image/x-icon"
+    />
     <style>
-      body {
-        background-color: #000;
-      }
       /* Basic CSS for the dropdown */
       .main-navigation ul li.has-dropdown {
         position: relative;
@@ -20,7 +21,7 @@
       }
 
       .main-navigation ul li.has-dropdown > a::after {
-        content: "\25BE"; /* Down arrow */
+        content: "\25BE";
         position: absolute;
         right: 10px;
         top: 50%;
@@ -59,110 +60,224 @@
       .header-image {
         width: 100%;
         height: auto;
-        max-height: 500px; /* Adjust as needed */
-        object-fit: cover;
+        max-height: 675px; /* Adjust as needed */
+        object-fit: contain;
         object-position: center;
       }
-
-      .flex-container {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
+      .bar .mobile-nav {
+        display: none;
         justify-content: center;
         align-items: center;
-        gap: 20px;
-        margin-bottom: 15px;
+        width: 20px;
+        height: 20px;
       }
 
-      .image-style {
-        position: relative;
-        width: 500px;
-        height: 350px;
-      }
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .bar {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          align-items: center;
+        }
+        .bar .mobile-nav {
+          background-color: inherit;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          max-width: 40px;
+          max-height: 40px;
+        }
+        .container {
+          width: 95%;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
 
-      .image-description {
-        width: 40%;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        text-wrap: wrap;
-        text-align: left;
-      }
+        .main-header .container {
+          height: fit-content !important;
+          flex-direction: column;
+          align-items: center;
+        }
 
-      .image-description h2 {
-        font-size: 2em;
-        font-weight: bolder;
-        margin-bottom: 10px;
-      }
+        .main-navigation {
+          width: 100%;
+          display: none; /* Hide the navigation by default */
+          flex-direction: column;
+          align-items: center;
+          background-color: #333; /* Dark background for mobile */
+          padding: 10px 0;
+        }
 
-      .welcome-text {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 2px;
-      }
-      .welcome-text h2 {
-        font-size: 2em;
-        color: white;
-        text-align: center;
-      }
-      .welcome-text h6 {
-        font-size: 1.2em;
-        color: white;
-        text-align: center;
-      }
-      .welcome-text p {
-        font-size: 1em;
-        color: white;
-        text-align: center;
-        text-wrap: wrap;
-      }
-      .metrics-container {
-        background-image: url("./assest/DSC06825-scaled.jpg");
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 30px;
-      }
-      .metrics-container div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* padding: 20px; */
-      }
-      .metrics-container svg {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 10px;
-      }
-      .metrics-container h3 {
-        font-size: 4em;
-        color: white;
-        margin: 0;
-      }
-      .metrics-container p {
-        font-size: 1.2em;
-        color: white;
-        margin: 0;
-        text-wrap: wrap;
+        .main-navigation ul {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+
+        .main-navigation ul li {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 5px;
+        }
+        .main-navigation ul li a {
+          padding: 10px 0;
+          display: block;
+        }
+
+        .main-navigation ul li.has-dropdown > a::after {
+          right: 15px;
+        }
+
+        .dropdown {
+          position: static;
+          width: 100%;
+          background-color: #444;
+        }
+
+        .header-right {
+          width: 100%;
+          justify-content: center;
+          margin-top: 15px;
+        }
+
+        .search-input {
+          width: 80%;
+        }
+
+        .header-dynamic-content .dynamic-image img,
+        .header-image {
+          /* max-height: 300px !important; */
+          object-fit: cover;
+        }
+
+        .header-dynamic-content .dynamic-text {
+          padding: 10px;
+          bottom: 5%; /* Adjust position */
+        }
+        .header-dynamic-content .dynamic-text .title {
+          font-size: 1.5em;
+        }
+        .header-dynamic-content .dynamic-text .description {
+          font-size: 0.9em;
+          margin-bottom: 10px;
+        }
+        .header-dynamic-content .dynamic-text .button {
+          padding: 8px 12px;
+          font-size: 0.8em;
+        }
+
+        .hero-section .container,
+        .champions-section .container,
+        .tam-khan-section .container,
+        .join-us-section .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hero-section .hero-content,
+        .hero-section .hero-media,
+        .champions-section .champions-content,
+        .champions-section .hero-media,
+        .tam-khan-section .tam-khan-content,
+        .tam-khan-section .tam-khan-image,
+        .join-us-section .join-us-content,
+        .join-us-section .access-pass-form {
+          width: 100% !important;
+          margin-bottom: 20px;
+          padding-left: 0;
+          padding-right: 0;
+          text-align: center;
+        }
+        .tam-khan-section .tam-khan-content {
+          text-align: center;
+        }
+
+        .hero-media iframe,
+        .tam-khan-image iframe {
+          width: 100% !important;
+          height: 250px; /* Adjust height for mobile */
+        }
+
+        .classes-grid {
+          display: grid;
+          grid-template-columns: repeat(
+            2,
+            1fr
+          ) !important; /* 2 columns for mobile */
+          gap: 15px; /* Adjusted gap for mobile */
+        }
+        .classes-grid .class-item img {
+          max-width: 100%;
+        }
+        .classes-grid .class-item h3 {
+          font-size: 1em;
+        }
+
+        .access-pass-form input,
+        .access-pass-form select,
+        .access-pass-form select option,
+        .access-pass-form button {
+          width: 100%;
+          max-width: 300px;
+          margin-bottom: 10px;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-content .contact-info,
+        .footer-content .location-map,
+        .footer-content .contact-details {
+          width: 90%;
+          margin-bottom: 20px;
+        }
+
+        .footer-content .location-map iframe {
+          width: 100% !important;
+          height: 250px;
+        }
       }
     </style>
   </head>
   <body>
     <header class="main-header">
       <div class="container">
-        <div class="logo">
-          <a href="./index.html">
-            <img src="./assest/logotk-150x150.png" alt="TKMMAFIT Logo" />
-          </a>
+        <div class="bar">
+          <div class="logo">
+            <a href="./index.html">
+              <img src="./assest/logotk-150x150.png" alt="TKMMAFIT Logo" />
+            </a>
+          </div>
+          <button class="mobile-nav" onclick="addRemoveClass()">
+            <svg
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#FFFFFF"
+              stroke="#FFFFFF"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  fill="#FFFFFF"
+                  d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+                ></path>
+              </g>
+            </svg>
+          </button>
         </div>
-        <nav class="main-navigation">
+        <nav class="main-navigation" id="main-navigation">
           <ul>
             <li><a href="/index.html">TKMMAFIT</a></li>
             <li><a href="./tk27.html">TK 27</a></li>
@@ -608,7 +723,7 @@
       </section>
     </main>
 
-    <footer class="slide-in-from-bottom">
+    <footer class="">
       <div class="container footer-content">
         <div class="contact-info">
           <h3>TKMMAFIT</h3>
@@ -635,5 +750,6 @@
 
     <script src="./js/script.js"></script>
     <script src="./js/searchbar.js"></script>
+    <script src="./js/mobile-nav.js"></script>
   </body>
 </html>

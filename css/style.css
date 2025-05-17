@@ -3,10 +3,20 @@ body {
   font-family: sans-serif;
   scroll-behavior: smooth;
   background-color: #000 !important;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
+}
+
+img {
+  filter: grayscale(100%) !important;
+  -webkit-filter: grayscale(100%) !important; /* For older Safari */
+}
+
+.display-active {
+  display: block !important;
 }
 
 .main-header {
+  height: fit-content !important;
   background-color: #000; /* Adjust as needed */
   color: #fff; /* Adjust text color */
   padding: 20px 0; /* Adjust vertical padding */
@@ -295,6 +305,10 @@ body {
 
 .tam-khan-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-right: 20px;
 }
 
@@ -317,6 +331,9 @@ body {
 
 .tam-khan-image {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tam-khan-image img {
@@ -335,31 +352,36 @@ body {
 }
 
 .join-us-section1 {
-    background-image: url('../assest/DSC06782-scaled.jpg'); /* Edit this path */
-    background-size: cover; /* Ensures the image covers the section */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    padding: 60px 20px; /* Adjust padding as needed for content spacing */
-    /* color: white; */ /* Uncomment if your text isn't already white and needs to be */
-    position: relative; /* Needed if you plan to add an overlay */
-    z-index: 0; /* Base z-index */
+  background-image: url("../assest/DSC06782-scaled.jpg"); /* Edit this path */
+  background-size: cover; /* Ensures the image covers the section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 60px 20px; /* Adjust padding as needed for content spacing */
+  /* color: white; */ /* Uncomment if your text isn't already white and needs to be */
+  position: relative; /* Needed if you plan to add an overlay */
+  z-index: 0; /* Base z-index */
 }
 
 /* Add this to css/style.css if you want an overlay */
 .join-us-section1::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.301); /* 50% black overlay, adjust as needed */
-    z-index: 1; /* Places the overlay above the background image */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.301
+  ); /* 50% black overlay, adjust as needed */
+  z-index: 1; /* Places the overlay above the background image */
 }
 
 .join-us-section1 .container {
-    position: relative; /* Ensure content is on top of the overlay */
-    z-index: 2; /* Higher z-index than the overlay */
+  position: relative; /* Ensure content is on top of the overlay */
+  z-index: 2; /* Higher z-index than the overlay */
 }
 
 .join-us-section .container {
@@ -376,6 +398,7 @@ body {
   margin-bottom: 20px; /* Adds some space between the content and the form */
 }
 
+.join-us-section .join-us-content,
 .join-us-section .access-pass-form {
   margin-bottom: 0; /* Remove bottom margin from the last element if not needed */
 }
@@ -399,7 +422,7 @@ body {
 }
 
 .access-pass-form {
-  max-width: 300px !important; /* Adjust form width */
+  max-width: 500px !important; /* Adjust form width */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -422,8 +445,8 @@ body {
 }
 
 .access-pass-form button[type="submit"] {
-  background-color: #dadada; /* Example button color */
-  color: #1d1d1d;
+  color: #dadada; /* Example button color */
+  background-color: #1d1d1d;
   padding: 15px 20px;
   border: none;
   border-radius: 5px;
@@ -434,15 +457,14 @@ body {
 
 .access-pass-form button[type="submit"]:hover {
   background-color: #cacccc; /* Darker hover color */
+  color: #1d1d1d;
 }
 
 /* ... previous CSS ... */
 
 /* Footer Styles */
 footer {
-  background-image: url(../assest/DSC06825-scaled.jpg);
-  background-position: center; /* Centers the background image */
-  background-repeat: no-repeat;/* Prevents the image from tiling */
+  background-color: #000;
   color: #fff;
   text-align: center;
 }
@@ -516,6 +538,15 @@ footer {
 
   .location-map iframe {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .join-us-section .join-us-content,
+  .join-us-section .access-pass-form {
+    width: 100%; /* Makes them take the full width of the container */
+    max-width: 200px; /* Optional: constrain the max width for better readability on wider screens */
+    margin-bottom: 20px; /* Adds some space between the content and the form */
   }
 }
 /* Add this to your css/style.css file */
